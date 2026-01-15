@@ -1,5 +1,6 @@
 package com.example.compose_tv.Gpt.components
 
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Box
@@ -28,27 +29,51 @@ import androidx.compose.ui.unit.sp
 fun MovieCard(title: String, modifier: Modifier = Modifier) {
     var isFocused by remember { mutableStateOf(false) }
 
-    val scale by animateFloatAsState(
-        targetValue = if (isFocused) 1.1f else 1f,
-        label = "movie-scale"
+    // TODO change scale of item when it focused
+//    val scale by animateFloatAsState(
+//        targetValue = if (isFocused) 1.1f else 1f,
+//        label = "movie-scale"
+//    )
+
+    // TODO Animate glow size
+    val glowSize by animateDpAsState(
+        targetValue = if (isFocused) 6.dp else 0.dp,
+        label = "glow-size"
     )
+    val glowAlpha by animateFloatAsState(
+        targetValue = if (isFocused) 1f else 0f,
+        label = "glow-alpha"
+    )
+
     Card(
         modifier = modifier
             .width(200.dp)
             .height(120.dp)
-            .graphicsLayer {
-                scaleX = scale
-                scaleY = scale
-            }
+            // TODO change scale of item when it focused
+//            .graphicsLayer {
+//                scaleX = scale
+//                scaleY = scale
+//            }
+
+            // TODO add Animated glow
+//            .animatedFocusGlow(
+//                isFocused = isFocused,
+//                shape = RoundedCornerShape(18.dp),
+//                glowColor = Color.White.copy(alpha = glowAlpha),
+//                maxGlow = glowSize
+//            )
+
+            // TODO add focus glow, not animated
+            .focusGlow(isFocused, RoundedCornerShape(12.dp))
             // 🔐 Focus memory issue
             .onFocusChanged { isFocused = it.isFocused }
-            .focusable()
-            .focusGlow(isFocused, RoundedCornerShape(12.dp)),
+            .focusable(),
+
         colors = CardDefaults.cardColors(
 //            containerColor = if (isFocused)
 //                Color(0xFFFF9505)
 //            else
-                Color.DarkGray
+            Color.DarkGray
         )
     ) {
         Box(
