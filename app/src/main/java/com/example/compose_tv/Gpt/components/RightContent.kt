@@ -21,13 +21,20 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.input.key.KeyEventType
+import androidx.compose.ui.input.key.key
+import androidx.compose.ui.input.key.onPreviewKeyEvent
+import androidx.compose.ui.input.key.type
 import androidx.compose.ui.unit.dp
 import androidx.tv.foundation.lazy.list.TvLazyColumn
 import androidx.tv.foundation.lazy.list.items
 import com.example.compose_tv.Gpt.CategoryModel
 
 @Composable
-fun RightContent() {
+fun RightContent(
+    modifier: Modifier = Modifier,
+) {
 
     val categories = listOf(
         CategoryModel("Popular", List(8) { "Movie ${it + 1}" }),
@@ -44,7 +51,7 @@ fun RightContent() {
     }
 
     LazyColumn(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .focusGroup() // 🔒 stops left menu stealing focus
             .padding(end = 32.dp),

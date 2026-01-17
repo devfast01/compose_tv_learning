@@ -29,7 +29,8 @@ import androidx.compose.ui.input.key.type
 
 @Composable
 fun SideMenu(
-    onMoveRight: () -> Unit
+    modifier: Modifier,
+    onMoveRight: () -> Unit,
 ) {
     val menuItems = listOf("Home", "Search", "Movies", "TV Shows", "Settings")
 
@@ -41,7 +42,7 @@ fun SideMenu(
     var isExpanded by remember { mutableStateOf(false) }
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .width(if (isExpanded) 240.dp else 96.dp)
             .fillMaxHeight()
             .background(Color.Black.copy(alpha = 0.6f))
@@ -68,6 +69,7 @@ fun SideMenu(
                                     onMoveRight()
                                     true
                                 }
+
                                 else -> false
                             }
                         } else false

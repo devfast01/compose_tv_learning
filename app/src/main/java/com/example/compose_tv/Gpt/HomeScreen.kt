@@ -11,24 +11,43 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.compose_tv.Gpt.components.GlassLeftMenu
 import com.example.compose_tv.Gpt.components.RightContent
+import com.example.compose_tv.Gpt.components.SideMenu
 import com.example.compose_tv.Gpt.components.TvBackgroundWithGradient
 import com.example.compose_tv.R
 
 @Composable
-fun GptHomeScreen() {
+fun GptHomeScreen(
+    onItemSelected: (String) -> Unit,
+) {
 
     TvBackgroundWithGradient {
+
+        val sideMenuFocusRequester = remember { FocusRequester() }
+        val contentFocusRequester = remember { FocusRequester() }
+
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp)
         ) {
+
+            // 📌 LEFT SIDE MENU
+//            SideMenu(
+//                modifier = Modifier
+//                    .padding(start = 24.dp, top = 24.dp, bottom = 24.dp)
+//                    .focusRequester(sideMenuFocusRequester),
+//                onMoveRight = {
+//                    contentFocusRequester.requestFocus()
+//                }
+//            )
 
             // LEFT SIDE (Cards)
             GlassLeftMenu(
@@ -38,7 +57,11 @@ fun GptHomeScreen() {
             Spacer(modifier = Modifier.width(24.dp))
 
             // RIGHT SIDE (Content)
-            RightContent()
+            RightContent(
+                modifier = Modifier
+                    .weight(1f)
+                    .focusRequester(contentFocusRequester),
+            )
 
         }
     }
