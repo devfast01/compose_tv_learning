@@ -21,8 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Compose_tv">
 
+        <!--      TODO  GPT example activity-->
         <activity
-            android:name=".Gpt.LearnWithGpt"
+            android:name=".TVCarousel.TVCarouselApp"
             android:banner="@mipmap/ic_launcher"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
@@ -35,19 +36,21 @@
             </intent-filter>
         </activity>
 
+
+        <!--      TODO  GPT example activity-->
         <!--        <activity-->
-        <!--            android:name=".SimpleTvMenu"-->
+        <!--            android:name=".Gpt.LearnWithGpt"-->
         <!--            android:banner="@mipmap/ic_launcher"-->
         <!--            android:exported="true"-->
         <!--            android:icon="@mipmap/ic_launcher"-->
         <!--            android:logo="@mipmap/ic_launcher"-->
-        <!--            android:windowSoftInputMode="adjustResize" >-->
+        <!--            android:windowSoftInputMode="adjustResize">-->
         <!--            <intent-filter>-->
         <!--                <action android:name="android.intent.action.MAIN" />-->
-
         <!--                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />-->
         <!--            </intent-filter>-->
         <!--        </activity>-->
+
     </application>
 
 </manifest>

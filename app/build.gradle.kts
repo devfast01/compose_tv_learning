@@ -58,8 +58,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
 
-    implementation(libs.androidx.tv.foundation)
+//    implementation(libs.androidx.tv.foundation)
     implementation(libs.androidx.tv.material)
+
+    // TODO Compose Animation
+    implementation(libs.androidx.compose.animation)
+
+    // TODO Jetpack Media3 (replaces ExoPlayer)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
+    implementation(libs.androidx.media3.session)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

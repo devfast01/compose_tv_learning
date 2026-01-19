@@ -25,9 +25,7 @@ import com.example.compose_tv.Gpt.components.TvBackgroundWithGradient
 import com.example.compose_tv.R
 
 @Composable
-fun GptHomeScreen(
-    onItemSelected: (String) -> Unit,
-) {
+fun GptHomeScreen() {
 
     TvBackgroundWithGradient {
 
