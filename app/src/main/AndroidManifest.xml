@@ -21,9 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Compose_tv">
 
-
         <activity
-            android:name=".FudgeExamples.FudgeExampleActivity"
+            android:name=".TVFragmentChanges.TVFragmentExampleActivity"
             android:banner="@mipmap/ic_launcher"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
@@ -35,6 +34,7 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <!-- TODO Examples with GPT-->
         <!--        <activity-->
