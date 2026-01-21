@@ -76,9 +76,9 @@ fun RightMenuItems(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        MenuCard(Icons.Default.Home, "Home")
-        MenuCard(Icons.Default.Search, "Search")
-        MenuCard(Icons.Default.MailOutline, "Movies")
-        MenuCard(Icons.Default.Settings, "Settings")
+        MenuCard(Icons.Default.Home, "Profile")
+        MenuCard(Icons.Default.Search, "Permissions")
+        MenuCard(Icons.Default.MailOutline, "About")
+        MenuCard(Icons.Default.Settings, "Delete Account")
     }
 }
