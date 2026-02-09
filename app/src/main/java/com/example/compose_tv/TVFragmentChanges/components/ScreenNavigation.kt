@@ -20,7 +20,7 @@ fun PreferencesNavigation(navController: NavHostController) {
         composable(
             FragmentScreens.Permissions.title
         ) {
-//            PermissionsScreen()
+            PermissionsScreen()
         }
         composable(
             FragmentScreens.About.title

@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.MailOutline
 import androidx.compose.material.icons.filled.Search
@@ -22,10 +21,12 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 
 @Composable
 fun RightMenu(
     modifier: Modifier = Modifier,
+    navController: NavHostController,
 ) {
     Box(
         modifier = modifier
@@ -62,7 +63,8 @@ fun RightMenu(
         // 3️⃣ FOREGROUND content (NO BLUR)
         RightMenuItems(
             modifier = Modifier
-                .padding(vertical = 24.dp, horizontal = 16.dp)
+                .padding(vertical = 24.dp, horizontal = 16.dp),
+            navController
         )
     }
 }
@@ -71,14 +73,15 @@ fun RightMenu(
 @Composable
 fun RightMenuItems(
     modifier: Modifier = Modifier,
+    navController: NavHostController,
 ) {
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        MenuCard(Icons.Default.Home, "Profile")
-        MenuCard(Icons.Default.Search, "Permissions")
-        MenuCard(Icons.Default.MailOutline, "About")
-        MenuCard(Icons.Default.Settings, "Delete Account")
+        MenuCard(Icons.Default.Home, "Profile", navController)
+        MenuCard(Icons.Default.Search, "Permissions", navController)
+        MenuCard(Icons.Default.MailOutline, "About", navController)
+        MenuCard(Icons.Default.Settings, "Delete Account", navController)
     }
 }

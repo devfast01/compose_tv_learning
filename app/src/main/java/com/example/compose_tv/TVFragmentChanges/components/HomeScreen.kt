@@ -30,7 +30,8 @@ fun FragmentsHomeScreen() {
                 .weight(0.7f)
         ) {
             RightMenu(
-                modifier = Modifier.padding(end = 24.dp, top = 24.dp)
+                modifier = Modifier.padding(end = 24.dp, top = 24.dp),
+                navController = navController
             )
         }
     }

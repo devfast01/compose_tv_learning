@@ -36,10 +36,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.util.Log
+import androidx.navigation.NavHostController
 import com.example.compose_tv.Gpt.components.focusGlow
 
 @Composable
-fun MenuCard(icon: ImageVector, title: String) {
+fun MenuCard(icon: ImageVector, title: String, navController: NavHostController) {
     val context = LocalContext.current   // 👈 THIS is the context
     var isFocused by remember { mutableStateOf(false) }
 
@@ -61,13 +62,17 @@ fun MenuCard(icon: ImageVector, title: String) {
             .focusGlow(
                 isFocused = isFocused,
 //                shape = RoundedCornerShape(21.dp)
+
             )
-            .onFocusChanged { isFocused = it.isFocused }
+            .onFocusChanged {
+                isFocused = it.isFocused
+                if (isFocused) navController.navigate(title)
+            }
             .combinedClickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null, // TV style (no ripple)
                 onClick = {
-                    Toast.makeText(context, title, Toast.LENGTH_SHORT).show()
+                    navController.navigate(title)
                 }
             )
             .focusable(),

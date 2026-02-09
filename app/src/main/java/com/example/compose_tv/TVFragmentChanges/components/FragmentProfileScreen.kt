@@ -46,11 +46,9 @@ fun ProfilesContent() {
         Row {
             Spacer(modifier = Modifier.size(120.dp))
             FragmentButton(text = "Save") {
-
             }
             Spacer(modifier = Modifier.size(8.dp))
             FragmentButton(text = "Cancel") {
-
             }
         }
     }
