@@ -25,12 +25,12 @@ fun PreferencesNavigation(navController: NavHostController) {
         composable(
             FragmentScreens.About.title
         ) {
-//            AboutScreen()
+            FragmentAboutScreen()
         }
         composable(
             FragmentScreens.Logout.title
         ) {
-//            DeleteAccountScreen()
+            FragmentDeleteAccountScreen()
         }
     }
 }

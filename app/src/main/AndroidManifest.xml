@@ -21,8 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Compose_tv">
 
+        <!-- TODO Learning state management -->
         <activity
-            android:name=".TVFragmentChanges.TVFragmentExampleActivity"
+            android:name=".LearningStateManagement.StateManageActivity"
             android:banner="@mipmap/ic_launcher"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
@@ -30,10 +31,23 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- TODO TV Fragment changes -->
+        <!--        <activity-->
+        <!--            android:name=".TVFragmentChanges.TVFragmentExampleActivity"-->
+        <!--            android:banner="@mipmap/ic_launcher"-->
+        <!--            android:exported="true"-->
+        <!--            android:icon="@mipmap/ic_launcher"-->
+        <!--            android:logo="@mipmap/ic_launcher"-->
+        <!--            android:windowSoftInputMode="adjustResize">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
 
 
         <!-- TODO Examples with GPT-->

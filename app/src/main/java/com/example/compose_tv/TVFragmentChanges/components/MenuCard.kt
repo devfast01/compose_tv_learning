@@ -62,7 +62,6 @@ fun MenuCard(icon: ImageVector, title: String, navController: NavHostController)
             .focusGlow(
                 isFocused = isFocused,
 //                shape = RoundedCornerShape(21.dp)
-
             )
             .onFocusChanged {
                 isFocused = it.isFocused
