@@ -21,9 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Compose_tv">
 
-        <!-- TODO Learning state management -->
+        <!--        TODO left side menu-->
         <activity
-            android:name=".LearningStateManagement.StateManageActivity"
+            android:name=".SideMenu.SideMenuActivity"
             android:banner="@mipmap/ic_launcher"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
@@ -34,6 +34,21 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!-- TODO Learning state management -->
+        <!--        <activity-->
+        <!--            android:name=".LearningStateManagement.StateManageActivity"-->
+        <!--            android:banner="@mipmap/ic_launcher"-->
+        <!--            android:exported="true"-->
+        <!--            android:icon="@mipmap/ic_launcher"-->
+        <!--            android:logo="@mipmap/ic_launcher"-->
+        <!--            android:windowSoftInputMode="adjustResize" >-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
 
         <!-- TODO TV Fragment changes -->
         <!--        <activity-->
